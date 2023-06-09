@@ -9,7 +9,7 @@ import Page7 from './components/Page7'
 import Page8 from './components/Page8'
 import Page9 from './components/Page9'
 import Page10 from './components/Page10'
-import useWindowSize from './components/useWindowSize'
+import useWindowSize from '../hook/useWindowSize'
 import ImageScroll from './components/ImageScroll'
 
 const inter = Inter({ subsets: ['latin'] })
