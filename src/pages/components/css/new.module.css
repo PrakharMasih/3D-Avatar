@@ -1,0 +1,122 @@
+  /* HOME*/
+.teamcopy {
+    padding-top: 5em;
+    z-index: -1;
+  }
+  
+  .teamcopy1, .teamcopy2, .teamcopy3 {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .teamcopy1wrap, .teamcopy2wrap, .teamcopy3wrap {
+    font-size: 3rem;
+    letter-spacing: -2px;
+    line-height: 2em;
+    padding-right: 0.3em;
+    margin: -0.3rem 0;;
+  }
+  
+  .teamcopy1wrap {
+    animation: subLoop1 32s linear infinite;
+  }
+  
+  .teamcopy2wrap {
+    animation: subLoop2 24s linear infinite;
+  }
+  
+  .teamcopy3wrap {
+    animation: subLoop3 48s linear infinite;
+  }
+  
+  .teamcopy1, .teamcopy2, .teamcopy3 >h1{
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  .teamcopy1wrap>h1{
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  .teamcopy1wrap>h1>span{
+    
+    -webkit-text-stroke: 1.2px #000;
+    color: transparent;
+    font-weight: 500;
+  }
+  
+  .teamcopy2wrap>h1{
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  .teamcopy2wrap>h1>span{
+    
+    -webkit-text-stroke: 1.2px #000;
+    color: transparent;
+    font-weight: 500;
+  }
+  
+  .teamcopy3wrap>h1{
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  .teamcopy3wrap>h1>span{
+    
+    -webkit-text-stroke: 1.2px #000;
+    color: transparent;
+    font-weight: 500;
+  }
+  
+  @keyframes subLoop1 {
+    from {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes subLoop2 {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  @keyframes subLoop3 {
+    from {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @media (max-width: 760px){
+    .teamcopy1wrap, .teamcopy2wrap, .teamcopy3wrap {
+        font-size: 2.5rem;
+        line-height: 2em;
+      }
+  }

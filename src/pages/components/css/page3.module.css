@@ -1,0 +1,30 @@
+
+#righttext{
+    position: absolute;
+    top: 130%;
+    left: 10%;
+    z-index: 1;
+}
+#righttext>h3{
+    font-weight: 400;
+    color: #7c7c7c;
+    font-size: 1em;
+}
+#righttext>h1{
+    line-height: 1.5;
+    font-size: 2em;
+}
+#lefttext{
+    position: absolute;
+    top: 220%;
+    right: 10%;
+    text-align: end;
+}
+#lefttext>h1{
+    font-size: 2.2em;
+    line-height: 1.5;
+}
+#lefttext>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
