@@ -10,7 +10,11 @@ import Page8 from './components/Page8'
 import Page9 from './components/Page9'
 import Page10 from './components/Page10'
 import useWindowSize from '../hook/useWindowSize'
-import ImageScroll from './components/ImageScroll'
+import dynamic from 'next/dynamic';
+
+const DynamicImageScroll = dynamic(() => import('./components/ImageScroll'), {
+  ssr: false,
+});
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,7 +32,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
       </Head>
       <>
-          <ImageScroll width={windowSize.width} height={windowSize.height} />
+          <DynamicImageScroll width={windowSize.width} height={windowSize.height} />
           <Page2/>
           <Page3/>
           <Page4/>
