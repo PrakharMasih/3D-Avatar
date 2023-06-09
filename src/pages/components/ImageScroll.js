@@ -352,7 +352,7 @@ const ImageScroll = (props) => {
         src={imagePaths[0]}
         alt="Scrolling Image"
         className={styles.scrollimage}
-        // loading="lazy"
+        loading="lazy"
       />
     </>
   );
