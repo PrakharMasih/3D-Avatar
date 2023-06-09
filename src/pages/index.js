@@ -1,18 +1,54 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import Page2 from './components/Page2'
-import Page3 from './components/Page3'
-import Page4 from './components/Page4'
-import Page5 from './components/Page5'
-import Page6 from './components/Page6'
-import Page7 from './components/Page7'
-import Page8 from './components/Page8'
-import Page9 from './components/Page9'
-import Page10 from './components/Page10'
+// import Page2 from './components/Page2'
+// import Page3 from './components/Page3'
+// import Page4 from './components/Page4'
+// import Page5 from './components/Page5'
+// import Page6 from './components/Page6'
+// import Page7 from './components/Page7'
+// import Page8 from './components/Page8'
+// import Page9 from './components/Page9'
+// import Page10 from './components/Page10'
 import useWindowSize from '../hook/useWindowSize'
 import dynamic from 'next/dynamic';
 
 const DynamicImageScroll = dynamic(() => import('./components/ImageScroll'), {
+  ssr: false,
+});
+
+const DynamicPage2 = dynamic(() => import('./components/Page2'), {
+  ssr: false,
+});
+
+const DynamicPage3 = dynamic(() => import('./components/Page3'), {
+  ssr: false,
+});
+
+const DynamicPage4 = dynamic(() => import('./components/Page4'), {
+  ssr: false,
+});
+
+const DynamicPage5 = dynamic(() => import('./components/Page5'), {
+  ssr: false,
+});
+
+const DynamicPage6 = dynamic(() => import('./components/Page6'), {
+  ssr: false,
+});
+
+const DynamicPage7 = dynamic(() => import('./components/Page7'), {
+  ssr: false,
+});
+
+const DynamicPage8 = dynamic(() => import('./components/Page8'), {
+  ssr: false,
+});
+
+const DynamicPage9 = dynamic(() => import('./components/Page9'), {
+  ssr: false,
+});
+
+const DynamicPage10 = dynamic(() => import('./components/Page10'), {
   ssr: false,
 });
 
@@ -33,15 +69,15 @@ export default function Home() {
       </Head>
       <>
           <DynamicImageScroll width={windowSize.width} height={windowSize.height} />
-          <Page2/>
-          <Page3/>
-          <Page4/>
-          <Page5/>
-          <Page6/>
-          <Page7/>
-          <Page8/>
-          <Page9/>
-          <Page10/>
+          <DynamicPage2/>
+          <DynamicPage3/>
+          <DynamicPage4/>
+          <DynamicPage5/>
+          <DynamicPage6/>
+          <DynamicPage7/>
+          <DynamicPage8/>
+          <DynamicPage9/>
+          <DynamicPage10/>
 
       </>
     </>
