@@ -11,6 +11,7 @@ import { Inter } from 'next/font/google'
 // import Page10 from './components/Page10'
 import useWindowSize from '../hook/useWindowSize'
 import dynamic from 'next/dynamic';
+import { useState, useEffect } from 'react';
 
 const DynamicImageScroll = dynamic(() => import('./components/ImageScroll'), {
   ssr: false,
@@ -58,6 +59,12 @@ export default function Home() {
 
   const windowSize = useWindowSize();
 
+  const [isClientLoaded, setIsClientLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsClientLoaded(true);
+  }, []);
+
   return (
     <>
       <Head>
@@ -68,7 +75,10 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
       </Head>
       <>
-          <DynamicImageScroll width={windowSize.width} height={windowSize.height} />
+      {
+        isClientLoaded ? 
+        <>
+        <DynamicImageScroll width={windowSize.width} height={windowSize.height} />
           <DynamicPage2/>
           <DynamicPage3/>
           <DynamicPage4/>
@@ -78,6 +88,11 @@ export default function Home() {
           <DynamicPage8/>
           <DynamicPage9/>
           <DynamicPage10/>
+          </>
+          :
+          <h1>loading</h1>
+      }
+          
 
       </>
     </>
