@@ -19,7 +19,7 @@ function Page3() {
                     EDUCATION &
                     <br/>
                     LEARNING PERSPECTIVE</h1>
-                    <h3>.. </h3>
+                    <h3 style={{color:"red"}} >..SCROLL WITH A PAUSE </h3>
             </div>
     </div>
   )
