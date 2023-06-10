@@ -384,10 +384,10 @@ const imagePaths = [
         src={imagePaths[0]}
         alt="Scrolling Image"
         className={styles.scrollimage}
-        width={1700}
+        width={1300}
         height={100}
         objectFit="cover"
-        quality={25}
+        quality={5}
         priority={true}
       />
     </>
