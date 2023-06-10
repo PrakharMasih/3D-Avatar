@@ -317,37 +317,37 @@ const imagePaths = [
       const currentIndex = Math.floor(scrollPosition / props.height * 33) % imagePaths.length;
 
       if (imageRef.current !== null) {
-        imageRef.current.src = imagePaths[currentIndex];
+        // imageRef.current.src = imagePaths[currentIndex];
 
-        // imageRef.current.setAttribute("src", imagePaths[currentIndex]);
-        // imageRef.current.setAttribute("srcset", `${imagePaths[currentIndex]} 1x, ${imagePaths[currentIndex + 1]} 2x`);
+        imageRef.current.setAttribute("src", imagePaths[currentIndex]);
+        imageRef.current.setAttribute("srcset", `${imagePaths[currentIndex]} 1x, ${imagePaths[currentIndex + 1]} 2x`);
       }
     };
 
-    const frameCount = 300;
-    const currentFrame = (index) =>
-      `/image2/male${(index + 1).toString().padStart(4, '0')}.webp`;
+    // const frameCount = 300;
+    // const currentFrame = (index) =>
+    //   `/image2/male${(index + 1).toString().padStart(4, '0')}.webp`;
 
-    const loadImages = async () => {
-      try {
-        const loadedImages = await Promise.all(
-          Array.from({ length: frameCount }, (_, index) => {
-            return new Promise((resolve, reject) => {
-              const image = new Image();
-              image.src = currentFrame(index);
-              image.onload = () => resolve(image);
-              image.onerror = reject;
-            });
-          })
-        );
+    // const loadImages = async () => {
+    //   try {
+    //     const loadedImages = await Promise.all(
+    //       Array.from({ length: frameCount }, (_, index) => {
+    //         return new Promise((resolve, reject) => {
+    //           const image = new Image();
+    //           image.src = currentFrame(index);
+    //           image.onload = () => resolve(image);
+    //           image.onerror = reject;
+    //         });
+    //       })
+    //     );
 
-        imagePaths.push(...loadedImages.map((img) => img.src));
-        imageRef.current.src = imagePaths[0];
-        handleScroll();
-      } catch (error) {
-        console.error('Error loading images:', error);
-      }
-    };
+    //     imagePaths.push(...loadedImages.map((img) => img.src));
+    //     imageRef.current.src = imagePaths[0];
+    //     handleScroll();
+    //   } catch (error) {
+    //     console.error('Error loading images:', error);
+    //   }
+    // };
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -363,7 +363,7 @@ const imagePaths = [
       },
     });
 
-    loadImages();
+    // loadImages();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -372,23 +372,24 @@ const imagePaths = [
 
   return (
     <>
-      <img
+      {/* <img
         ref={imageRef}
         src={imagePaths[0]}
         alt="Scrolling Image"
         className={styles.scrollimage}
         loading="lazy"
-      />
-      {/* <Image
+      /> */}
+      <Image
         ref={imageRef}
         src={imagePaths[0]}
         alt="Scrolling Image"
         className={styles.scrollimage}
-        width={1200}
+        width={1700}
         height={100}
         objectFit="cover"
-        priority
-      /> */}
+        quality={25}
+        priority={true}
+      />
     </>
   );
 };
