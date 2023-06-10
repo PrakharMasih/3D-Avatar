@@ -5,7 +5,7 @@ function Page5() {
   return (
     <div className={styles.container}>
       <div id={styles.center}>
-        <h1>  BOOSTED 10X FASTER WITH <br /> <i>THE USE OF Next.js </i> ,<br /> ENABLES SERVER SIDE RENDERING SSR.</h1>
+        <h1>  ART <br /> <i>DESIGN</i> &,<br /> TECHNOLOGY</h1>
       </div>
     </div>
   )
