@@ -324,31 +324,6 @@ const imagePaths = [
       }
     };
 
-    // const frameCount = 300;
-    // const currentFrame = (index) =>
-    //   `/image2/male${(index + 1).toString().padStart(4, '0')}.webp`;
-
-    // const loadImages = async () => {
-    //   try {
-    //     const loadedImages = await Promise.all(
-    //       Array.from({ length: frameCount }, (_, index) => {
-    //         return new Promise((resolve, reject) => {
-    //           const image = new Image();
-    //           image.src = currentFrame(index);
-    //           image.onload = () => resolve(image);
-    //           image.onerror = reject;
-    //         });
-    //       })
-    //     );
-
-    //     imagePaths.push(...loadedImages.map((img) => img.src));
-    //     imageRef.current.src = imagePaths[0];
-    //     handleScroll();
-    //   } catch (error) {
-    //     console.error('Error loading images:', error);
-    //   }
-    // };
-
     gsap.registerPlugin(ScrollTrigger);
 
     ScrollTrigger.create({
@@ -380,15 +355,15 @@ const imagePaths = [
         loading="lazy"
       /> */}
       <Image
+        priority={true}
         ref={imageRef}
         src={imagePaths[0]}
         alt="Scrolling Image"
         className={styles.scrollimage}
-        width={1300}
+        width={1200}
         height={100}
         objectFit="cover"
-        quality={5}
-        priority={true}
+        quality={50}
       />
     </>
   );
