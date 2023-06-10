@@ -343,7 +343,7 @@ const imagePaths = [
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [props.height]);
 
   return (
     <>
